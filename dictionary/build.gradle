@@ -6,10 +6,21 @@
  * User Manual available at https://docs.gradle.org/5.5.1/userguide/tutorial_java_projects.html
  */
 
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'io.objectbox:objectbox-gradle-plugin:2.3.0'
+    }
+}
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-
+    // Apply the objectbox plugin
+    id 'io.objectbox'
     // Apply the application plugin to add support for building a CLI application
     id 'application'
 }
