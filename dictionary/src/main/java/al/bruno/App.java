@@ -9,6 +9,16 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(args);
+        BoxStore store = MyObjectBox.builder().name("objectbox-notes-db").build();
+        Box<Note> box = store.boxFor(Dictionary.class);
+
+        String text = args.length > 0 ? String.join(" ", args) : "No text given";
+        box.put(new Note(text));
+
+        System.out.println(box.count() + " notes in ObjectBox database:");
+        for (Dictionary note : box.getAll()) {
+            System.out.println(note);
+        }
+        store.close();
     }
 }
