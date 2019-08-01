@@ -1,37 +1,66 @@
 package al.bruno;
 
-<<<<<<< HEAD
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 
 @Entity
 public class Dictionary {
-=======
-@Entity
-public class Dictionary {
     @Id
-    public long id;
->>>>>>> 30b7c6bfe19eabdbee52cb89c353d1449b1161a6
-
-    public String text;
-    public String comment;
-    public Date date;
-<<<<<<< HEAD
+    private long id;
+    private String text;
+    private String comment;
+    //private Date date;
     
-=======
+    public Dictionary(long id, String text, String comment) {
+        this.id = id;
+        this.text = text;
+        this.comment = comment;
+    }
 
->>>>>>> 30b7c6bfe19eabdbee52cb89c353d1449b1161a6
-    public Dictionary(long id, String text, String comment, Date date) {
+    public Dictionary(String text) {
+        this.text = text;
+    }
+
+    /*public Dictionary(long id, String text, String comment, Date date) {
         this.id = id;
         this.text = text;
         this.comment = comment;
         this.date = date;
-    }
-<<<<<<< HEAD
+    }*/
     
-=======
-
->>>>>>> 30b7c6bfe19eabdbee52cb89c353d1449b1161a6
     public Dictionary() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the text
+     */
+    public String getText() {
+        return text;
+    }
+    /**
+     * @param text the text to set
+     */
+    public void setText(String text) {
+        this.text = text;
+    }
+    /**
+     * @return the comment
+     */
+    public String getComment() {
+        return comment;
+    }
+    /**
+     * @param comment the comment to set
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }
