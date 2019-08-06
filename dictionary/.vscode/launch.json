@@ -6,10 +6,15 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch)-App<dictionary>",
+            "name": "Debug (Launch)",
             "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "preLaunchTask": "compileJava",
             "mainClass": "al.bruno.App",
-            "projectName": "dictionary"
+            "projectName": "dictionary",
+            "args": ""
         }
     ]
 }
