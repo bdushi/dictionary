@@ -34,6 +34,22 @@ apply plugin: 'io.objectbox'
 //targetCompatibility = '1.8'
 //sourceCompatibility = '1.8'
 
+/* sourceSets {
+     main {
+         java {
+             srcDirs = ['build/classes/java/main','src/main/java']
+         }
+     }
+ }*/
+
+/*sourceSets {
+    apt{
+        java{
+            srcDir 'build/source/apt'
+        }
+    }
+}*/
+
 repositories {
         maven { url "https://plugins.gradle.org/m2/" }
 		// Use jcenter for resolving dependencies.
@@ -43,10 +59,10 @@ repositories {
 
 dependencies {
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:27.1-jre'
+    // implementation 'com.google.guava:guava:27.1-jre'
 	
 	implementation "io.objectbox:objectbox-java:2.3.0"
-implementation "io.objectbox:objectbox-windows:2.3.0"
+    // implementation "io.objectbox:objectbox-windows:2.3.0"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

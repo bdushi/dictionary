@@ -63,4 +63,9 @@ public class Dictionary {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    @Override
+    public String toString() {
+        return id + " " + text + " " + comment;
+    }
 }

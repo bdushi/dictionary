@@ -19,7 +19,7 @@ public class App {
 
         System.out.println(box.count() + " notes in ObjectBox database:");
         for (Dictionary note : box.getAll()) {
-            System.out.println(note);
+            System.out.println(note.toString());
         }
         store.close();
     }

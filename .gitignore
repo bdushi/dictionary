@@ -1,0 +1,5 @@
+dictionary/objectbox-jni-windows-x64.dll
+dictionary/.classpath
+dictionary/objectbox-notes-db/data.mdb
+dictionary/objectbox-notes-db/lock.mdb
+dictionary/objectbox-models/default.json

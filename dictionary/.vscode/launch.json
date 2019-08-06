@@ -9,7 +9,8 @@
             "name": "Debug (Launch)-App<dictionary>",
             "request": "launch",
             "mainClass": "al.bruno.App",
-            "projectName": "dictionary"
+            "projectName": "dictionary",
+            "port": "5005"
         }
     ]
 }
