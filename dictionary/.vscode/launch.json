@@ -14,7 +14,8 @@
             "preLaunchTask": "compileJava",
             "mainClass": "al.bruno.App",
             "projectName": "dictionary",
-            "args": ""
+            "args": "",
+            "port": "5005"
         }
     ]
 }
