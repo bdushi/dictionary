@@ -2,11 +2,27 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "type": "shell",
+    "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared"
+        },
+    "isBackground": true,
     "tasks": [
-        {
-            "label": "echo",
+         {
+            "label": "build",
             "type": "shell",
-            "command": "gradle"
+            "command": "gradlew run"
         }
     ]
+    // 
+    // "tasks": [
+    //     {
+    //         "label": "build",
+    //         "args": ["-g", "${file}"],
+    //         "command": "javac"
+    //     }
+    // ]
 }

@@ -9,7 +9,6 @@ public class App {
     public String getGreeting() {
         return "Hello world.";
     }
-
     public static void main(String[] args) {
         BoxStore store = MyObjectBox.builder().name("objectbox-notes-db").build();
         Box<Dictionary> box = store.boxFor(Dictionary.class);

@@ -2,6 +2,7 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // https://stackoverflow.com/questions/39582491/debug-run-standard-java-in-visual-studio-code-ide-and-os-x/46128218#46128218
     "version": "0.2.0",
     "configurations": [
         {
@@ -11,11 +12,15 @@
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "preLaunchTask": "compileJava",
+            "preLaunchTask": "build",
             "mainClass": "al.bruno.App",
             "projectName": "dictionary",
-            "args": "",
-            "port": "5005"
+            "args": [],
+        }, {
+            "type": "java",
+            "request": "attach",
+            "port": 5005,
+            "hostName": "localhost"
         }
     ]
 }
