@@ -13,8 +13,7 @@
     "tasks": [
          {
             "label": "build",
-            "command": "gradle run",
-            "args": [""]
+            "command": "./gradlew run"
         }
     ]
     // 
