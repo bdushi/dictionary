@@ -31,14 +31,14 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'io.objectbox'
 
-//targetCompatibility = '1.8'
-//sourceCompatibility = '1.8'
+// targetCompatibility = '1.8'
+// sourceCompatibility = '1.8'
 
-// tasks.withType(JavaExec) {
-//     if (System.getProperty('DEBUG', 'false') == 'true') {
-//         jvmArgs '-Xdebug', '-Xrunjdwp:transport=debug_socket,server=y,suspend=y,address=5005'
-//     }
-// }
+/* tasks.withType(JavaExec) {
+    if (System.getProperty('DEBUG', 'false') == 'true') {
+        jvmArgs '-Xdebug', '-Xrunjdwp:transport=debug_socket,server=y,suspend=y,address=5005'
+    }
+}*/
 
 /* sourceSets {
      main {

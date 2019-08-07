@@ -7,8 +7,8 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch)",
             "request": "launch",
+            "name": "Debug (Launch)",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
@@ -19,6 +19,7 @@
         }, {
             "type": "java",
             "request": "attach",
+            "name": "Debug (Attach)",
             "port": 5005,
             "hostName": "localhost"
         }

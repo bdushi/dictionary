@@ -13,14 +13,15 @@
     "tasks": [
          {
             "label": "build",
-            "type": "shell",
-            "command": "gradlew run"
+            "command": "gradle run",
+            "args": [""]
         }
     ]
     // 
     // "tasks": [
     //     {
     //         "label": "build",
+    //         "type": "shell",
     //         "args": ["-g", "${file}"],
     //         "command": "javac"
     //     }
