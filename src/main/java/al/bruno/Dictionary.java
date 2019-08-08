@@ -3,32 +3,19 @@ package al.bruno;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 
+import java.util.Date;
+
 @Entity
 public class Dictionary {
     @Id
     private long id;
     private String text;
     private String comment;
-    //private Date date;
+    private Date date;
     
-    public Dictionary(long id, String text, String comment) {
-        this.id = id;
+    public Dictionary(String text, String comment) {
         this.text = text;
         this.comment = comment;
-    }
-
-    public Dictionary(String text) {
-        this.text = text;
-    }
-
-    /*public Dictionary(long id, String text, String comment, Date date) {
-        this.id = id;
-        this.text = text;
-        this.comment = comment;
-        this.date = date;
-    }*/
-    
-    public Dictionary() {
     }
 
     public long getId() {

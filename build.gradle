@@ -8,7 +8,6 @@
 
 buildscript {
     ext.objectbox_version = '2.3.0'
-    ext.kotlin_version = '1.3.41'
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
 		// Use jcenter for resolving dependencies.
@@ -17,7 +16,6 @@ buildscript {
     }
     dependencies {
         classpath "io.objectbox:objectbox-gradle-plugin:$objectbox_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -30,35 +28,9 @@ buildscript {
     id 'io.objectbox'
 }*/
 
-apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'io.objectbox'
-apply plugin: 'kotlin'
-
-// targetCompatibility = '1.8'
-// sourceCompatibility = '1.8'
-
-/* tasks.withType(JavaExec) {
-    if (System.getProperty('DEBUG', 'false') == 'true') {
-        jvmArgs '-Xdebug', '-Xrunjdwp:transport=debug_socket,server=y,suspend=y,address=5005'
-    }
-}*/
-
-/* sourceSets {
-     main {
-         java {
-             srcDirs = ['build/classes/java/main','src/main/java']
-         }
-     }
- }*/
-
-/*sourceSets {
-    apt{
-        java{
-            srcDir 'build/source/apt'
-        }
-    }
-}*/
+apply plugin: 'java'
 
 repositories {
         maven { url "https://plugins.gradle.org/m2/" }
@@ -70,12 +42,9 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     // implementation 'com.google.guava:guava:27.1-jre'
-	
+
 	implementation "io.objectbox:objectbox-java:$objectbox_version"
     // implementation "io.objectbox:objectbox-windows:2.3.0"
-
-    // Use the Kotlin JDK 8 standard library.
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
@@ -83,5 +52,5 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = 'al.bruno.AppKt'
+    mainClassName = 'al.bruno.App'
 }
