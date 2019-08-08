@@ -12,6 +12,7 @@ class App {
         return "Hello world."
     }
 }
+
 fun main(args: Array<String>) {
     println(App().greeting)
     val store : BoxStore = MyObjectBox.builder().name("objectbox-notes-db").build()

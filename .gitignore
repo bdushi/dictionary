@@ -7,3 +7,5 @@ dictionary/objectbox-notes-db/data.mdb
 dictionary/objectbox-notes-db/lock.mdb
 dictionary/.classpath
 dictionary/objectbox-models/default.json
+dictionary/.gradle/
+dictionary/gradle/
