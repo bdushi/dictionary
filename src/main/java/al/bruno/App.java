@@ -7,10 +7,19 @@ import io.objectbox.Box;
 import io.objectbox.BoxStore;
 
 class App {
+    private String greeting = "Dictionary";
+
+    public String getGreeting() {
+        return greeting;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
+
     public static void main(String[] args) {
-        String greeting = "Hello world.";
-        System.out.println(greeting);
-        BoxStore store = MyObjectBox.builder().name("objectbox-notes-db").build();
+        System.out.println(new App().getGreeting());
+        BoxStore store = MyObjectBox.builder().name("objectbox-dictionary-db").build();
         Box<Dictionary> box = store.boxFor(Dictionary.class);
 
         String text;
@@ -19,7 +28,7 @@ class App {
         } else {
             text = "No text given";
         }
-        box.put(new Dictionary(text));
+        box.put(new Dictionary(text, text));
         System.out.println(box.count() + " notes in ObjectBox database:");
         for (Dictionary dictionary : box.getAll()) {
             System.out.println(dictionary.toString());

@@ -28,9 +28,9 @@ buildscript {
     id 'io.objectbox'
 }*/
 
-apply plugin: 'application'
-apply plugin: 'io.objectbox'
 apply plugin: 'java'
+apply plugin: 'io.objectbox'
+apply plugin: 'application'
 
 repositories {
         maven { url "https://plugins.gradle.org/m2/" }

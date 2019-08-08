@@ -1,5 +1,6 @@
 package al.bruno;
 
+import io.objectbox.annotation.Convert;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 
@@ -11,12 +12,18 @@ public class Dictionary {
     private long id;
     private String text;
     private String comment;
+    @Convert(converter = DateConverter.class, dbType = Long.class)
     private Date date;
     
     public Dictionary(String text, String comment) {
         this.text = text;
         this.comment = comment;
+        this.date = new Date();
     }
+
+    public Dictionary() {
+    }
+
 
     public long getId() {
         return id;
@@ -51,8 +58,16 @@ public class Dictionary {
         this.comment = comment;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        return id + " " + text + " " + comment;
+        return id + " " + text + " " + comment + date;
     }
 }
