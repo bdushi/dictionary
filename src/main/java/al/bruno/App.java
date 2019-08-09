@@ -4,7 +4,6 @@
 package al.bruno;
 
 import al.bruno.data.source.DictionaryDataSource;
-import al.bruno.di.DictionaryModule;
 import al.bruno.model.Dictionary;
 import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
 
@@ -16,23 +15,8 @@ public class App {
         System.out.print("*      Dictionary Start Running    *\n");
         System.out.print("************************************\n");
         new App(args);
-        /*BoxStore store = MyObjectBox.builder().name("objectbox-dictionary-db").build();
-        Box<Dictionary> box = store.boxFor(Dictionary.class);
-
-        String text;
-        if (args.length > 0) {
-            text = String.join(" ", args);
-        } else {
-            text = "No text given";
-        }
-        box.put(new Dictionary(text, text));
-        System.out.println(box.count() + " notes in ObjectBox database:");
-        for (Dictionary dictionary : box.getAll()) {
-            System.out.println(dictionary.toString());
-        }
-        store.close();*/
     }
-
+    public App() {}
     private App(String[] args) {
         DaggerComponentProcessor_ProcessorComponent.builder().build();
         //DictionaryComponent logComponent = DaggerComponentProcessor_ProcessorComponent.builder().build();
