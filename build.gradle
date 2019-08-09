@@ -8,7 +8,8 @@
 
 buildscript {
     ext.objectbox_version = '2.3.0'
-    ext.dagger_version = '2.17'
+    ext.dagger_version = '2.24'
+    ext.net_ltgt = '0.21'
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
 		// Use jcenter for resolving dependencies.
@@ -17,6 +18,7 @@ buildscript {
     }
     dependencies {
         classpath "io.objectbox:objectbox-gradle-plugin:$objectbox_version"
+        classpath "net.ltgt.gradle:gradle-apt-plugin:$net_ltgt"
     }
 }
 
@@ -32,6 +34,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'io.objectbox'
 apply plugin: 'application'
+apply plugin: 'net.ltgt.apt'
 
 repositories {
         maven { url "https://plugins.gradle.org/m2/" }

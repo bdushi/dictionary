@@ -3,23 +3,20 @@
  */
 package al.bruno;
 
-import io.objectbox.Box;
-import io.objectbox.BoxStore;
+import al.bruno.data.source.DictionaryDataSource;
+import al.bruno.di.DictionaryModule;
+import al.bruno.model.Dictionary;
+import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
 
-class App {
-    private String greeting = "Dictionary";
+import javax.inject.Inject;
 
-    public String getGreeting() {
-        return greeting;
-    }
-
-    public void setGreeting(String greeting) {
-        this.greeting = greeting;
-    }
-
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        BoxStore store = MyObjectBox.builder().name("objectbox-dictionary-db").build();
+        System.out.print("************************************\n");
+        System.out.print("*      Dictionary Start Running    *\n");
+        System.out.print("************************************\n");
+        new App(args);
+        /*BoxStore store = MyObjectBox.builder().name("objectbox-dictionary-db").build();
         Box<Dictionary> box = store.boxFor(Dictionary.class);
 
         String text;
@@ -33,6 +30,23 @@ class App {
         for (Dictionary dictionary : box.getAll()) {
             System.out.println(dictionary.toString());
         }
-        store.close();
+        store.close();*/
     }
+
+    private App(String[] args) {
+        DaggerComponentProcessor_ProcessorComponent.builder().build();
+        //DictionaryComponent logComponent = DaggerComponentProcessor_ProcessorComponent.builder().build();
+        /*
+        // The line above does the same as the following line
+        LogComponent logComponent = DaggerLogComponent
+                .builder()
+                .logModule(new LogModule())
+                .build();
+        */
+        //logComponent.injectDepsIntoFieldsOf(this);
+        dictionaryDataSource.put(new Dictionary("test", "test"));
+    }
+
+    @Inject
+    DictionaryDataSource dictionaryDataSource;
 }
