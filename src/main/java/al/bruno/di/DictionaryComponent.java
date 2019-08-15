@@ -11,11 +11,12 @@ import javax.inject.Singleton;
 @Singleton
 @dagger.Component(modules = {DictionaryModule.class, DataSourceModule.class})
 public interface DictionaryComponent {
-    DictionaryDataSource dictionaryDataSource();
-    /*@Component.Builder
+    // DictionaryDataSource dictionaryDataSource();
+    @Component.Builder
     interface Builder {
+        DictionaryComponent build();
         @BindsInstance
         Builder application(App app);
-        DictionaryComponent builder();
-    }*/
+    }
+    void inject(App app);
 }

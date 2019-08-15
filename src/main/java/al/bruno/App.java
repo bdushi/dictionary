@@ -4,6 +4,8 @@
 package al.bruno;
 
 import al.bruno.data.source.DictionaryDataSource;
+import al.bruno.di.DictionaryComponent;
+import al.bruno.di.DictionaryModule;
 import al.bruno.model.Dictionary;
 import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
 
@@ -19,10 +21,8 @@ public class App {
     public App() {}
     private App(String[] args) {
         DaggerComponentProcessor_ProcessorComponent.builder().build();
-        //DictionaryComponent logComponent = DaggerComponentProcessor_ProcessorComponent.builder().build();
-        /*
         // The line above does the same as the following line
-        LogComponent logComponent = DaggerLogComponent
+        /*LogComponent logComponent = DaggerLogComponent
                 .builder()
                 .logModule(new LogModule())
                 .build();
