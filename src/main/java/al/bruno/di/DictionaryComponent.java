@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 
 //, DataSourceModule.class
 @Singleton
-@dagger.Component(modules = {DictionaryModule.class})
+@dagger.Component(modules = {DictionaryModule.class, DataSourceModule.class})
 public interface DictionaryComponent {
     DictionaryDataSource dictionaryDataSource();
     /*@Component.Builder
