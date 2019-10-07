@@ -1,6 +1,7 @@
 package al.bruno.data.source;
 
 import al.bruno.model.Dictionary;
+import io.objectbox.Box;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -8,14 +9,15 @@ import javax.inject.Singleton;
 @Singleton
 public class DictionaryLocalDataSource implements DictionaryDataSource {
 
-    private DictionaryDataSource dictionaryDataSource;
+    private final Box<Dictionary> box;
+
     @Inject
-    public DictionaryLocalDataSource(DictionaryDataSource dictionaryDataSource) {
-        this.dictionaryDataSource = dictionaryDataSource;
+    public DictionaryLocalDataSource(Box<Dictionary> box) {
+        this.box = box;
     }
 
     @Override
     public long put(Dictionary entity) {
-        return dictionaryDataSource.put(entity);
+        return box.put(entity);
     }
 }
