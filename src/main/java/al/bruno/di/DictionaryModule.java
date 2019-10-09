@@ -3,12 +3,13 @@ package al.bruno.di;
 import al.bruno.model.Dictionary;
 import al.bruno.model.MyObjectBox;
 import dagger.Provides;
+import dagger.Module;
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
 
 import javax.inject.Singleton;
 
-@dagger.Module
+@Module
 public class DictionaryModule {
     @Provides
     @Singleton
