@@ -3,23 +3,14 @@
  */
 package al.bruno;
 
-import al.bruno.data.source.DictionaryRepository;
-import al.bruno.di.DataSourceServiceModule;
-import al.bruno.di.DictionaryModule;
-
-import dagger.Component;
-import javax.inject.Singleton;
+import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
 
 public class DictionaryApp {
-    @Singleton
-    @Component(modules = {DictionaryModule.class, DataSourceServiceModule.class})
-    public interface DictionaryComponent {
-        DictionaryRepository dictionaryRepository();
-    }
     public static void main(String[] args) {
         System.out.print("************************************\n");
         System.out.print("______Dictionary_Start_Running______\n");
         System.out.print("************************************\n");
+        new DictionaryApp(args);
     }
     public DictionaryApp() {}
     private DictionaryApp(String[] args) {
