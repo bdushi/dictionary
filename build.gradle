@@ -7,8 +7,8 @@
  */
 
 buildscript {
-    ext.objectbox_version = '2.3.0'
-    ext.dagger_version = '2.17'
+    ext.objectbox_version = '2.4.0'
+    ext.dagger_version = '2.24'
     ext.net_ltgt = '0.21'
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
@@ -18,7 +18,7 @@ buildscript {
     }
     dependencies {
         classpath "io.objectbox:objectbox-gradle-plugin:$objectbox_version"
-        classpath "net.ltgt.gradle:gradle-apt-plugin:$net_ltgt"
+        // classpath "net.ltgt.gradle:gradle-apt-plugin:$net_ltgt"
     }
 }
 
@@ -33,7 +33,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'io.objectbox'
-apply plugin: 'net.ltgt.apt'
+// apply plugin: 'net.ltgt.apt'
 apply plugin: 'application'
 
 repositories {
@@ -47,7 +47,7 @@ dependencies {
     // This dependency is used by the application.
     // implementation 'com.google.guava:guava:27.1-jre'
 
-	implementation "io.objectbox:objectbox-java:$objectbox_version"
+	// implementation "io.objectbox:objectbox-java:$objectbox_version"
     // implementation "io.objectbox:objectbox-windows:2.3.0"
 	implementation "com.google.dagger:dagger:$dagger_version"
 	implementation "com.google.dagger:dagger-compiler:$dagger_version"
