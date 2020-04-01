@@ -5,16 +5,14 @@ import al.bruno.model.Dictionary;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
-public class DictionaryRepository implements DictionaryDataSource {
-    @Inject
+public class DictionaryRepository {
     private DictionaryDataSource dictionaryDataSource;
-    public DictionaryRepository (DictionaryDataSource dictionaryDataSource) {
-        this.dictionaryDataSource = dictionaryDataSource;
+    @Inject
+    public DictionaryRepository (DictionaryLocalDataSource dictionaryLocalDataSource) {
+        this.dictionaryDataSource = dictionaryLocalDataSource;
     }
 
-    @Override
     public long put(Dictionary entity) {
-        return dictionaryDataSource.put(entity);
+        return dictionaryDataSource.insert(entity);
     }
 }

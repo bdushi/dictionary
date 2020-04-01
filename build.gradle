@@ -7,7 +7,6 @@
  */
 
 buildscript {
-    ext.objectbox_version = '2.3.0'
     ext.dagger_version = '2.24'
     ext.net_ltgt = '0.21'
     ext.h2 = '1.4.199'
@@ -19,8 +18,6 @@ buildscript {
 		jcenter()
     }
     dependencies {
-        classpath "io.objectbox:objectbox-gradle-plugin:$objectbox_version"
-        classpath "net.ltgt.gradle:gradle-apt-plugin:$net_ltgt"
     }
 }
 
@@ -34,8 +31,6 @@ buildscript {
 }*/
 
 apply plugin: 'java'
-apply plugin: 'io.objectbox'
-apply plugin: 'net.ltgt.apt'
 apply plugin: 'application'
 
 repositories {
@@ -53,7 +48,7 @@ dependencies {
 	implementation "org.hibernate:hibernate-core:$hibernate"
     // implementation "io.objectbox:objectbox-windows:2.3.0"
 	implementation "com.google.dagger:dagger:$dagger_version"
-	implementation "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

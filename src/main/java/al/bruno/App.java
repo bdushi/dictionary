@@ -3,11 +3,9 @@
  */
 package al.bruno;
 
-import al.bruno.data.source.DictionaryDataSource;
-import al.bruno.di.DictionaryComponent;
-import al.bruno.di.DictionaryModule;
+import al.bruno.data.source.DictionaryRepository;
+import al.bruno.di.DaggerDictionaryComponent;
 import al.bruno.model.Dictionary;
-import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
 
 import javax.inject.Inject;
 
@@ -20,7 +18,8 @@ public class App {
     }
     public App() {}
     private App(String[] args) {
-        DaggerComponentProcessor_ProcessorComponent.builder().build();
+        DaggerDictionaryComponent.builder().application(this).build().inject(this);
+        //DaggerComponentProcessor_ProcessorComponent.builder().build();
         // The line above does the same as the following line
         /*LogComponent logComponent = DaggerLogComponent
                 .builder()
@@ -28,9 +27,9 @@ public class App {
                 .build();
         */
         //logComponent.injectDepsIntoFieldsOf(this);
-        dictionaryDataSource.put(new Dictionary("test", "test"));
+        //dictionaryRepository.put(new Dictionary("test", "test"));
     }
 
     @Inject
-    DictionaryDataSource dictionaryDataSource;
+    DictionaryRepository dictionaryRepository;
 }

@@ -2,6 +2,9 @@ package al.bruno.data.source;
 
 import al.bruno.model.Dictionary;
 
+import java.util.List;
+
 public interface DictionaryDataSource {
-    long put(Dictionary entity);
+    long insert(Dictionary entity);
+    List<Dictionary> dictionary();
 }

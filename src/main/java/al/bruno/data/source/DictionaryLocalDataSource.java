@@ -1,21 +1,28 @@
 package al.bruno.data.source;
 
 import al.bruno.model.Dictionary;
+import org.hibernate.Session;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.List;
 
-@Singleton
 public class DictionaryLocalDataSource implements DictionaryDataSource {
-
-    private DictionaryDataSource dictionaryDataSource;
+    private final Session session;
     @Inject
-    public DictionaryLocalDataSource(DictionaryDataSource dictionaryDataSource) {
-        this.dictionaryDataSource = dictionaryDataSource;
+    public DictionaryLocalDataSource(Session session) {
+        this.session = session;
+    }
+    @Override
+    public long insert(Dictionary entity) {
+        session.beginTransaction();
+        session.save(entity);
+        session.getTransaction().commit();
+        return 1;
     }
 
     @Override
-    public long put(Dictionary entity) {
-        return dictionaryDataSource.put(entity);
+    public List dictionary() {
+        return session.createQuery("FROM Dictionary").getResultList();
     }
 }
