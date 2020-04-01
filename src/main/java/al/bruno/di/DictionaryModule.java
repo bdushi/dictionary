@@ -1,31 +1,24 @@
 package al.bruno.di;
 
-import al.bruno.data.source.DictionaryDataSource;
-import al.bruno.data.source.DictionaryLocalDataSource;
-import al.bruno.model.Dictionary;
-import al.bruno.model.MyObjectBox;
-import dagger.Binds;
+import dagger.Module;
 import dagger.Provides;
-import io.objectbox.Box;
-import io.objectbox.BoxStore;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import javax.inject.Singleton;
 
-@dagger.Module
-public abstract class DictionaryModule {
-    @Provides
-    @Singleton
-    public static BoxStore providesBoxStore(String name) {
-        return MyObjectBox.builder().name("objectbox-dictionary-db").build();
-    }
-
+@Module
+public class DictionaryModule {
     @Singleton
     @Provides
-    public static Box<Dictionary> provideBoxDictionary(BoxStore store) {
-        return store.boxFor(Dictionary.class);
+    public SessionFactory sessionFactory() {
+        return new Configuration().configure().buildSessionFactory();
     }
 
+    @Provides
     @Singleton
-    @Binds
-    public abstract DictionaryDataSource provideDictionaryLocalDataSource(DictionaryLocalDataSource dataSource);
+    public Session session(SessionFactory sessionFactory) {
+        return sessionFactory.openSession();
+    }
 }

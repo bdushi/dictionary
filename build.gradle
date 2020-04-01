@@ -10,6 +10,8 @@ buildscript {
     ext.objectbox_version = '2.3.0'
     ext.dagger_version = '2.24'
     ext.net_ltgt = '0.21'
+    ext.h2 = '1.4.199'
+    ext.hibernate = '5.4.6.Final'
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
 		// Use jcenter for resolving dependencies.
@@ -47,7 +49,8 @@ dependencies {
     // This dependency is used by the application.
     // implementation 'com.google.guava:guava:27.1-jre'
 
-	implementation "io.objectbox:objectbox-java:$objectbox_version"
+	implementation "com.h2database:h2:$h2"
+	implementation "org.hibernate:hibernate-core:$hibernate"
     // implementation "io.objectbox:objectbox-windows:2.3.0"
 	implementation "com.google.dagger:dagger:$dagger_version"
 	implementation "com.google.dagger:dagger-compiler:$dagger_version"

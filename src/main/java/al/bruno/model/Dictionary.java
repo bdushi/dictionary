@@ -5,15 +5,16 @@ import io.objectbox.annotation.Convert;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 
+import javax.persistence.GeneratedValue;
 import java.util.Date;
 
 @Entity
 public class Dictionary {
     @Id
+    @GeneratedValue
     private long id;
     private String text;
     private String comment;
-    @Convert(converter = DateConverter.class, dbType = Long.class)
     private Date date;
     
     public Dictionary(String text, String comment) {
