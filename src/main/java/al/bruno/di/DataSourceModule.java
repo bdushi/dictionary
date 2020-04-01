@@ -8,8 +8,8 @@ import dagger.Module;
 import javax.inject.Singleton;
 
 @Module
-abstract class DataSourceModule {
+public abstract class DataSourceModule {
     @Singleton
     @Binds
-    abstract DictionaryDataSource provideEventDataSource(DictionaryLocalDataSource dataSource);
+    public abstract DictionaryDataSource providesDictionaryDataSource(DictionaryLocalDataSource dictionaryLocalDataSource);
 }

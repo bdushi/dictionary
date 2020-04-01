@@ -1,7 +1,7 @@
 package al.bruno.di;
 
 import al.bruno.App;
-import al.bruno.data.source.DictionaryDataSource;
+import al.bruno.data.source.DictionaryRepository;
 import dagger.BindsInstance;
 import dagger.Component;
 
@@ -12,6 +12,7 @@ import javax.inject.Singleton;
 @dagger.Component(modules = {DictionaryModule.class, DataSourceModule.class})
 public interface DictionaryComponent {
     // DictionaryDataSource dictionaryDataSource();
+    // DictionaryRepository dictionaryRepository();
     @Component.Builder
     interface Builder {
         DictionaryComponent build();

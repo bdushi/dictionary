@@ -11,6 +11,6 @@ public class AppTest {
     @Test
     public void testAppHasAGreeting() {
         App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.dictionaryDataSource.put(new Dictionary("test", "test")));
+        classUnderTest.dictionaryRepository.put(new Dictionary("test", "test"));
     }
 }
