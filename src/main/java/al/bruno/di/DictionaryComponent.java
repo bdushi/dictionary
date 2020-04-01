@@ -7,12 +7,9 @@ import dagger.Component;
 
 import javax.inject.Singleton;
 
-//, DataSourceModule.class
 @Singleton
 @dagger.Component(modules = {DictionaryModule.class, DataSourceModule.class})
 public interface DictionaryComponent {
-    // DictionaryDataSource dictionaryDataSource();
-    // DictionaryRepository dictionaryRepository();
     @Component.Builder
     interface Builder {
         DictionaryComponent build();

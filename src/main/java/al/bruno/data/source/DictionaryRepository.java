@@ -4,17 +4,22 @@ import al.bruno.model.Dictionary;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.List;
 
-@Singleton
-public class DictionaryRepository implements DictionaryDataSource {
+public class DictionaryRepository {
+
+    private final DictionaryDataSource dictionaryLocalDataSource;
+
     @Inject
-    private DictionaryDataSource dictionaryDataSource;
-    public DictionaryRepository (DictionaryDataSource dictionaryDataSource) {
-        this.dictionaryDataSource = dictionaryDataSource;
+    public DictionaryRepository (DictionaryLocalDataSource dictionaryLocalDataSource) {
+        this.dictionaryLocalDataSource = dictionaryLocalDataSource;
     }
 
-    @Override
     public long put(Dictionary entity) {
-        return dictionaryDataSource.put(entity);
+        return dictionaryLocalDataSource.put(entity);
+    }
+
+    public List<Dictionary> list() {
+        return dictionaryLocalDataSource.list();
     }
 }

@@ -4,7 +4,8 @@
 package al.bruno;
 
 import al.bruno.data.source.DictionaryRepository;
-import dagger.internal.codegen.DaggerComponentProcessor_ProcessorComponent;
+import al.bruno.di.DaggerDictionaryComponent;
+import al.bruno.model.Dictionary;
 
 import javax.inject.Inject;
 
@@ -17,16 +18,9 @@ public class App {
     }
     public App() {}
     private App(String[] args) {
-        // DaggerComponentProcessor_ProcessorComponent.builder().build();
-        DaggerComponentProcessor_ProcessorComponent.builder().build();
-        // The line above does the same as the following line
-        /*LogComponent logComponent = DaggerLogComponent
-                .builder()
-                .logModule(new LogModule())
-                .build();
-        */
-        //logComponent.injectDepsIntoFieldsOf(this);
-        //dictionaryRepository.put(new Dictionary("test", "test"));
+        DaggerDictionaryComponent.builder().application(this).build().inject(this);
+        dictionaryRepository.put(new Dictionary("test", "test"));
+        dictionaryRepository.list().forEach(dictionary -> System.out.println(String.format("%s %s", dictionary.getText(), dictionary.getComment())));
     }
 
     @Inject

@@ -9,7 +9,6 @@ import javax.inject.Singleton;
 
 @Module
 public abstract class DataSourceModule {
-    @Singleton
     @Binds
     public abstract DictionaryDataSource providesDictionaryDataSource(DictionaryLocalDataSource dictionaryLocalDataSource);
 }

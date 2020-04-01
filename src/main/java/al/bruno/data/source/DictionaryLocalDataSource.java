@@ -1,21 +1,26 @@
 package al.bruno.data.source;
 
 import al.bruno.model.Dictionary;
-
+import io.objectbox.Box;
 import javax.inject.Inject;
-import javax.inject.Singleton;
+import java.util.List;
 
-@Singleton
 public class DictionaryLocalDataSource implements DictionaryDataSource {
 
-    private DictionaryDataSource dictionaryDataSource;
+    private final Box<Dictionary> dictionaryBox;
+
     @Inject
-    public DictionaryLocalDataSource(DictionaryDataSource dictionaryDataSource) {
-        this.dictionaryDataSource = dictionaryDataSource;
+    public DictionaryLocalDataSource(Box<Dictionary> dictionaryBox) {
+        this.dictionaryBox = dictionaryBox;
     }
 
     @Override
     public long put(Dictionary entity) {
-        return dictionaryDataSource.put(entity);
+        return dictionaryBox.put(entity);
+    }
+
+    @Override
+    public List<Dictionary> list() {
+        return dictionaryBox.getAll();
     }
 }

@@ -50,7 +50,7 @@ dependencies {
 	implementation "io.objectbox:objectbox-java:$objectbox_version"
     // implementation "io.objectbox:objectbox-windows:2.3.0"
 	implementation "com.google.dagger:dagger:$dagger_version"
-	implementation "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
