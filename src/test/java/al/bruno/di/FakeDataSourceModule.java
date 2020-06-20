@@ -5,11 +5,8 @@ import al.bruno.data.source.DictionaryLocalDataSource;
 import dagger.Binds;
 import dagger.Module;
 
-import javax.inject.Singleton;
-
 @Module
-public abstract class DataSourceModule {
-    @Singleton
+public abstract class FakeDataSourceModule {
     @Binds
     public abstract DictionaryDataSource providesDictionaryDataSource(DictionaryLocalDataSource dictionaryLocalDataSource);
 }

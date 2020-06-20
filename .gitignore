@@ -1,4 +1,5 @@
 /objectbox-models/
+/libobjectbox-jni-macos-x64.dylib
 /objectbox-jni-windows-x64.dll
 /objectbox-notes-db/
 /.classpath
@@ -11,3 +12,6 @@
 /gradle/
 /.gradle/
 /dictionary.iml
+/objectbox-dictionary-db/
+/test-objectbox-dictionary-db/data.mdb
+/test-objectbox-dictionary-db/lock.mdb
