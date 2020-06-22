@@ -8,6 +8,7 @@ package al.bruno;
 import al.bruno.data.source.DictionaryRepository;
 import al.bruno.di.DaggerTestComponent;
 import al.bruno.model.Dictionary;
+import io.objectbox.BoxStore;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -24,9 +25,8 @@ public class AppTest {
 
     @Inject
     DictionaryRepository dictionaryRepository;
-
-    /*@Rule
-    DaggerTestComponent daggerTestComponent;*/
+    @Inject
+    BoxStore boxStore;
 
     @Before
     public void setUp() {
@@ -34,21 +34,21 @@ public class AppTest {
     }
 
     @After
-    public void tearDown() throws Exception {
-        /*if (store != null) {
-            store.close();
-            store.deleteAllFiles();
-        }*/
+    public void tearDown() {
+        if (boxStore != null && !boxStore.isClosed()) {
+            boxStore.close();
+            boxStore.deleteAllFiles();
+        }
     }
 
     @Test
-    public void testPutAndGet() {
-        assertFalse(dictionaryRepository.list().size() > 10);
+    public void testGet() {
+        assertTrue(dictionaryRepository.list().isEmpty());
     }
 
     @Test
-    public void testAppHasAGreeting() {
-        assertEquals(dictionaryRepository.put(new Dictionary("test", "test")), 3);
+    public void testInsert() {
+        assertNotEquals(dictionaryRepository.put(new Dictionary("test", "test")), -1);
     }
 
     @Test

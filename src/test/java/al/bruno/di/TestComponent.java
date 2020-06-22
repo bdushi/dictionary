@@ -1,6 +1,5 @@
 package al.bruno.di;
 
-import al.bruno.App;
 import al.bruno.AppTest;
 import dagger.BindsInstance;
 import dagger.Component;
@@ -13,7 +12,7 @@ import javax.inject.Singleton;
 
 @Singleton
 @dagger.Component(modules = {FakeModule.class, FakeDataSourceModule.class})
-public interface TestComponent {
+public interface TestComponent extends DictionaryComponent {
     @Component.Factory
     interface Factory {
         TestComponent create(@BindsInstance AppTest appTest);
