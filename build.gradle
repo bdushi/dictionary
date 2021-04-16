@@ -8,7 +8,7 @@
 
 buildscript {
     ext.objectbox_version = '3.0.0-alpha2'
-    ext.dagger_version = '2.28'
+    ext.dagger_version = '2.34.1'
     ext.net_ltgt = '0.21'
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
