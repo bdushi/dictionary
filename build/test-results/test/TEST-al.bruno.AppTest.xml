@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="al.bruno.AppTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-04-22T08:04:59" hostname="Brunos-MacBook-Pro.local" time="0.028">
+<testsuite name="al.bruno.AppTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-08-20T13:28:01" hostname="Brunos-MacBook-Pro.local" time="0.041">
   <properties/>
-  <testcase name="testGet" classname="al.bruno.AppTest" time="0.028">
-    <failure message="java.lang.LinkageError: Loading ObjectBox native library failed: vendor=JetBrains s.r.o.,os=mac os x,os.arch=aarch64,sun.arch=64,android=false,linux=false" type="java.lang.LinkageError">java.lang.LinkageError: Loading ObjectBox native library failed: vendor=JetBrains s.r.o.,os=mac os x,os.arch=aarch64,sun.arch=64,android=false,linux=false
-	at io.objectbox.internal.NativeLibraryLoader.&lt;clinit&gt;(NativeLibraryLoader.java:109)
-	at io.objectbox.BoxStore.&lt;init&gt;(BoxStore.java:199)
-	at io.objectbox.BoxStoreBuilder.build(BoxStoreBuilder.java:383)
+  <testcase name="testGet" classname="al.bruno.AppTest" time="0.041">
+    <failure message="java.lang.LinkageError: [ObjectBox] Loading native library failed, please report this to us: vendor=JetBrains s.r.o.,os=mac os x,os.arch=aarch64,model=64,android=false,linux=false,machine=arm64" type="java.lang.LinkageError">java.lang.LinkageError: [ObjectBox] Loading native library failed, please report this to us: vendor=JetBrains s.r.o.,os=mac os x,os.arch=aarch64,model=64,android=false,linux=false,machine=arm64
+	at io.objectbox.internal.NativeLibraryLoader.&lt;clinit&gt;(NativeLibraryLoader.java:115)
+	at io.objectbox.BoxStore.&lt;init&gt;(BoxStore.java:258)
+	at io.objectbox.BoxStoreBuilder.build(BoxStoreBuilder.java:498)
 	at al.bruno.di.FakeModule.providesBoxStore(FakeModule.java:29)
 	at al.bruno.di.FakeModule_ProvidesBoxStoreFactory.providesBoxStore(FakeModule_ProvidesBoxStoreFactory.java:40)
 	at al.bruno.di.FakeModule_ProvidesBoxStoreFactory.get(FakeModule_ProvidesBoxStoreFactory.java:31)
@@ -66,10 +66,10 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.UnsatisfiedLinkError: /Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos-x64.dylib: dlopen(/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos-x64.dylib, 1): no suitable image found.  Did find:
-	/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos-x64.dylib: mach-o, but wrong architecture
-	/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos-x64.dylib: mach-o, but wrong architecture
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.UnsatisfiedLinkError: /Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos.dylib: dlopen(/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos.dylib, 1): no suitable image found.  Did find:
+	/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos.dylib: mach-o, but wrong architecture
+	/Users/bruno/InteliJIdea/dictionary/libobjectbox-jni-macos.dylib: mach-o, but wrong architecture
 	at java.base/java.lang.ClassLoader$NativeLibrary.load0(Native Method)
 	at java.base/java.lang.ClassLoader$NativeLibrary.load(ClassLoader.java:2442)
 	at java.base/java.lang.ClassLoader$NativeLibrary.loadLibrary(ClassLoader.java:2498)
@@ -77,11 +77,10 @@ Caused by: java.lang.UnsatisfiedLinkError: /Users/bruno/InteliJIdea/dictionary/l
 	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2627)
 	at java.base/java.lang.Runtime.load0(Runtime.java:768)
 	at java.base/java.lang.System.load(System.java:1837)
-	at io.objectbox.internal.NativeLibraryLoader.&lt;clinit&gt;(NativeLibraryLoader.java:78)
+	at io.objectbox.internal.NativeLibraryLoader.&lt;clinit&gt;(NativeLibraryLoader.java:83)
 	... 63 more
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Unknown os.arch "aarch64" - ObjectBox is defaulting to x64
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

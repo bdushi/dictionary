@@ -27,8 +27,7 @@
         {
           "id": "4:8860006477635119064",
           "name": "date",
-          "type": 6,
-          "flags": 2
+          "type": 6
         }
       ],
       "relations": []
